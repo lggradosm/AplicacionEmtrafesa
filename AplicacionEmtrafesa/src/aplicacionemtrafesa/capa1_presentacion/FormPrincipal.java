@@ -74,7 +74,7 @@ public class FormPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setText("ITINERARIOS");
+        jMenu4.setText("ITINERARIO");
 
         jMenuItem4.setText("CREAR ITINERARIO");
         jMenu4.add(jMenuItem4);
