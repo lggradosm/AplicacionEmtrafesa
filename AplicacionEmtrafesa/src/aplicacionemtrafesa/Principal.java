@@ -18,7 +18,7 @@ public class Principal {
      */
     public static void main(String[] args) {
         FormPrincipal p = new FormPrincipal();
-        p.setVisible(true);
+        p.setVisible(true);     
     }
     
 }
