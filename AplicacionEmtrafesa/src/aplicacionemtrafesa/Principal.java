@@ -5,6 +5,8 @@
  */
 package aplicacionemtrafesa;
 
+import aplicacionemtrafesa.capa1_presentacion.FormPrincipal;
+
 /**
  *
  * @author Home
