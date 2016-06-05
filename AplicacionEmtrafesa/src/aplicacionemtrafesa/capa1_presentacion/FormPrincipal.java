@@ -7,13 +7,19 @@ package aplicacionemtrafesa.capa1_presentacion;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import javax.swing.JInternalFrame;
 
 /**
  *
  * @author Home
  */
-public final class FormPrincipal extends javax.swing.JFrame {
+public class FormPrincipal extends javax.swing.JFrame {
 
+    public void agregarFrame(JInternalFrame internalFrame){
+        desktop.add(internalFrame);
+        internalFrame.setSize(desktop.getWidth(), desktop.getHeight());
+        internalFrame.show();
+    }
     
     public Dimension obtenerResolucion(){
         Toolkit toolkit = Toolkit.getDefaultToolkit();
@@ -24,8 +30,7 @@ public final class FormPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setBounds(-6, 0,obtenerResolucion().width+15 , obtenerResolucion().height-30);
         //desktop.setBounds(, obtenerResolucion().width-175, obtenerResolucion().height-45);
-        desktop.setSize(obtenerResolucion().width-175, obtenerResolucion().height-45);
-        desktop.setLocation(195, -100);
+     
     }
 
     /**
@@ -37,9 +42,22 @@ public final class FormPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jMenu1 = new javax.swing.JMenu();
+        menuBar1 = new java.awt.MenuBar();
+        menu1 = new java.awt.Menu();
+        menu2 = new java.awt.Menu();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         desktop = new javax.swing.JDesktopPane();
+
+        jMenu1.setText("jMenu1");
+
+        menu1.setLabel("File");
+        menuBar1.add(menu1);
+
+        menu2.setLabel("Edit");
+        menuBar1.add(menu2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -77,9 +95,7 @@ public final class FormPrincipal extends javax.swing.JFrame {
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         FormAgregarClientes formPasajes = new FormAgregarClientes();
-        desktop.add(formPasajes);
-        formPasajes.setSize(desktop.getWidth(), desktop.getHeight());
-        formPasajes.show();
+        agregarFrame(formPasajes);
     }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
@@ -120,6 +136,11 @@ public final class FormPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane desktop;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPopupMenu jPopupMenu1;
+    private java.awt.Menu menu1;
+    private java.awt.Menu menu2;
+    private java.awt.MenuBar menuBar1;
     // End of variables declaration//GEN-END:variables
 }

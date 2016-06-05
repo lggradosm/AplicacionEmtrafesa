@@ -16,6 +16,13 @@ public class FormAgregarClientes extends javax.swing.JInternalFrame {
     /**
      * Creates new form NewJInternalFrame
      */
+    public void buscarClientes(){
+        FormBuscarClientes buscarClientes = new FormBuscarClientes();
+        FormPrincipal principal = new FormPrincipal();
+        this.hide();
+        principal.agregarFrame(buscarClientes);
+    }
+    
     public FormAgregarClientes() {
         initComponents();
         ((BasicInternalFrameUI) this.getUI()).setNorthPane(null);
@@ -93,11 +100,11 @@ public class FormAgregarClientes extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
-        
+        buscarClientes();
     }//GEN-LAST:event_btnCrearActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-      
+      buscarClientes();
 
     }//GEN-LAST:event_btnCancelarActionPerformed
 
