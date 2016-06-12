@@ -17,8 +17,8 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        FormLogin login = new FormLogin();
-        login.setVisible(true);     
+        new FormLogin().setVisible(true);
+
     }
     
 }
