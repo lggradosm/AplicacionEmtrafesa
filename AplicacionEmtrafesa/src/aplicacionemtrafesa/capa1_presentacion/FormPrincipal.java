@@ -94,8 +94,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        FormAgregarClientes formPasajes = new FormAgregarClientes();
-        agregarFrame(formPasajes);
+      
     }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
