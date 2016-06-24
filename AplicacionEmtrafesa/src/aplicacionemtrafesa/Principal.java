@@ -5,7 +5,7 @@
  */
 package aplicacionemtrafesa;
 
-import aplicacionemtrafesa.capa1_presentacion.FormLogin;
+import aplicacionemtrafesa.capa1_presentacion.FormPrincipal;
 
 /**
  *
@@ -17,7 +17,7 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new FormLogin().setVisible(true);
+        new FormPrincipal().setVisible(true);
 
     }
     

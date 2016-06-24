@@ -11,6 +11,7 @@ package aplicacionemtrafesa.capa3_Dominio.Entidad;
  */
 public class Usuario {
     private String nombre;
+    private String apellidos;
     private String usuario;
     private String contrasena;
     private String permiso;
@@ -19,8 +20,9 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String nombre, String usuario ,String contrasena, String permiso) {
+    public Usuario(String nombre,String apellidos, String usuario ,String contrasena, String permiso) {
         this.nombre = nombre;
+        this.apellidos = apellidos;
         this.usuario = usuario;
         this.contrasena = contrasena;
         this.permiso = permiso;
@@ -33,6 +35,14 @@ public class Usuario {
 
     public void setPermiso(String permiso) {
         this.permiso = permiso;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
     public String getNombre() {
