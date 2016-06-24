@@ -130,11 +130,11 @@ public class FormDatosConductor extends javax.swing.JDialog {
 
         jLabel5.setText("Viajes");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 70, -1));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 70, -1));
 
         jLabel6.setText("Estado");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, -1, -1));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, 100, -1));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 80, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
