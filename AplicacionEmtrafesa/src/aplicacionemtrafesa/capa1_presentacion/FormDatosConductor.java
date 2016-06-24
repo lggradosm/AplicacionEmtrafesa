@@ -17,6 +17,8 @@ public class FormDatosConductor extends javax.swing.JDialog {
     public FormDatosConductor(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+         setLocationRelativeTo(this);
+        setSize(740,450);
     }
 
     /**
@@ -48,6 +50,8 @@ public class FormDatosConductor extends javax.swing.JDialog {
         jTextField2 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -119,22 +123,28 @@ public class FormDatosConductor extends javax.swing.JDialog {
         jLabel2.setText("Apellidos");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 290, -1));
-        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, -1, -1));
+        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, -1, 20));
 
         jLabel3.setText("Fecha de Nacimiento");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
-        getContentPane().add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
+        getContentPane().add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, -1, -1));
 
         jLabel4.setText("Fecha de Contrato");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, -1, -1));
 
         jLabel5.setText("Viajes");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 70, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 70, -1));
 
         jLabel6.setText("Estado");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, -1, -1));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 80, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 80, -1));
+
+        jButton1.setText("GUARDAR");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 90, 30));
+
+        jButton2.setText("SALIR");
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, 90, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -218,6 +228,8 @@ public class FormDatosConductor extends javax.swing.JDialog {
     private javax.swing.JLabel etiDireccion;
     private javax.swing.JLabel etiDni;
     private javax.swing.JLabel etiNombre;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
