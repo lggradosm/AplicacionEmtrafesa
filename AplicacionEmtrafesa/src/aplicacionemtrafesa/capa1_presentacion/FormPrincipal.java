@@ -16,9 +16,7 @@ import javax.swing.JInternalFrame;
 public class FormPrincipal extends javax.swing.JFrame {
 
     public void agregarFrame(JInternalFrame internalFrame){
-        desktop.add(internalFrame);
-        internalFrame.setSize(desktop.getWidth(), desktop.getHeight());
-        internalFrame.show();
+      
     }
     
     public Dimension obtenerResolucion(){
@@ -28,7 +26,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     }
     public FormPrincipal() {
         initComponents();
-        this.setBounds(-6, 0,obtenerResolucion().width+15 , obtenerResolucion().height-30);
+      
         //desktop.setBounds(, obtenerResolucion().width-175, obtenerResolucion().height-45);
      
     }
