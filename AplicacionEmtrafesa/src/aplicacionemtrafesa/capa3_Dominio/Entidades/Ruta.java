@@ -5,23 +5,29 @@
  */
 package aplicacionemtrafesa.capa3_Dominio.Entidades;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Home
  */
 public class Ruta {
     private int rutaID;
-    private Sede partida;
-    private Sede destino;
+    private String origen;
+    private String destino;
     private Double precio;
-    private String estado;
 
-    public Ruta(int rutaID, Sede partida, Sede destino, Double precio) {
+    public Ruta() {
+    }
+    
+    
+    
+    public Ruta(int rutaID, String origen, String destino, Double precio) {
         this.rutaID = rutaID;
-        this.partida = partida;
+        this.origen = origen;
         this.destino = destino;
         this.precio = precio;
-        this.estado = "Activo";
+
     }
 
     public int getRutaID() {
@@ -32,19 +38,19 @@ public class Ruta {
         this.rutaID = rutaID;
     }
 
-    public Sede getPartida() {
-        return partida;
+    public String getOrigen() {
+        return origen;
     }
 
-    public void setPartida(Sede partida) {
-        this.partida = partida;
+    public void setOrigen(String origen) {
+        this.origen = origen;
     }
 
-    public Sede getDestino() {
+    public String getDestino() {
         return destino;
     }
 
-    public void setDestino(Sede destino) {
+    public void setDestino(String destino) {
         this.destino = destino;
     }
 
@@ -56,15 +62,12 @@ public class Ruta {
         this.precio = precio;
     }
 
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public static ArrayList datosObligatorios(){
+        ArrayList datosObligatorios = new ArrayList();
+        datosObligatorios.add("origen");
+        datosObligatorios.add("destino");
+        datosObligatorios.add("precio");
+        return datosObligatorios;
     }
     
-    public void obtenerPrecio(){
-        new ObtenerPrecio();
-    }
 }

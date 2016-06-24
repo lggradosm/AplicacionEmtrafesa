@@ -5,7 +5,16 @@
  */
 package aplicacionemtrafesa.capa1_presentacion;
 
+import aplicacionemtrafesa.capa1_presentacion.util.ConfiguradorDeTabla;
+import aplicacionemtrafesa.capa1_presentacion.util.Mensaje;
+import aplicacionemtrafesa.capa2_aplicacion.GestionarRutaServicio;
+import aplicacionemtrafesa.capa3_Dominio.Entidades.Ruta;
+import java.util.List;
 import javax.swing.JDialog;
+import mastersoft.modelo.ModeloTabla;
+import mastersoft.tabladatos.Columna;
+import mastersoft.tabladatos.Fila;
+import mastersoft.tabladatos.Tabla;
 
 /**
  *
@@ -15,13 +24,46 @@ public class FormGestionarRuta extends javax.swing.JDialog {
 
     private void crearTabla(){
         Tabla tabla = new Tabla();
-        
+        tabla.agregarColumna(new Columna("ID","java.lang.Integer"));
+        tabla.agregarColumna(new Columna("Origen", "java.lang.String"));
+        tabla.agregarColumna(new Columna("Destino","java.lang.String"));
+        tabla.agregarColumna(new Columna("Precio","java.lang.Double"));
+        ModeloTabla modeloTabla = new ModeloTabla(tabla);
+        tablaRutas.setModel(modeloTabla);
+        ConfiguradorDeTabla.configurarAnchoColumna(tablaRutas, 1, 250, 400, 50);
+        ConfiguradorDeTabla.configurarAnchoColumna(tablaRutas, 2, 80, 100, 50);
+        ConfiguradorDeTabla.configurarAnchoColumna(tablaRutas, 3, 80, 100, 50);
+        ConfiguradorDeTabla.ocultarColumna(tablaRutas, 0);
     }
     public FormGestionarRuta(java.awt.Frame parent, boolean modal) {
         super(parent,modal);
         initComponents();
+        crearTabla();
+        txtBuscar.requestFocusInWindow();
     }
 
+    private void buscar(){
+        Fila filaTabla;
+        String buscar = txtBuscar.getText().trim();
+        try{
+            GestionarRutaServicio gestionarRutaServicio = new GestionarRutaServicio();
+            List<Ruta> rutas = gestionarRutaServicio.buscarRutas(buscar);
+            ModeloTabla modeloTabla = (ModeloTabla)tablaRutas.getModel();
+            modeloTabla.eliminarTotalFilas();
+            for(Ruta ruta : rutas){
+                filaTabla = new Fila();
+                filaTabla.agregarValorCelda(ruta.getRutaID());
+                filaTabla.agregarValorCelda(ruta.getOrigen());
+                filaTabla.agregarValorCelda(ruta.getDestino());
+                filaTabla.agregarValorCelda(ruta.getPrecio());
+                modeloTabla.agregarFila(filaTabla);
+            }
+            modeloTabla.refrescarDatos();
+        }catch(Exception e){
+            Mensaje.mostrarErrorDeConsulta(this);
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,6 +77,7 @@ public class FormGestionarRuta extends javax.swing.JDialog {
         txtBuscar = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaRutas = new javax.swing.JTable();
+        btnBuscar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         botCrear = new javax.swing.JMenu();
         botModificar = new javax.swing.JMenu();
@@ -63,7 +106,20 @@ public class FormGestionarRuta extends javax.swing.JDialog {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 430, 270));
 
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, -1, -1));
+
         botCrear.setText("Crear");
+        botCrear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botCrearMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(botCrear);
 
         botModificar.setText("Modificar");
@@ -90,6 +146,16 @@ public class FormGestionarRuta extends javax.swing.JDialog {
         new FormMenu().setVisible(true);
     }//GEN-LAST:event_botSalirMouseClicked
 
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        buscar();
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void botCrearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botCrearMouseClicked
+        FormDatosRuta formDatosRuta = new FormDatosRuta(this);
+        formDatosRuta.setVisible(true);
+        buscar();
+    }//GEN-LAST:event_botCrearMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -100,6 +166,7 @@ public class FormGestionarRuta extends javax.swing.JDialog {
     private javax.swing.JMenu botEliminar;
     private javax.swing.JMenu botModificar;
     private javax.swing.JMenu botSalir;
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
