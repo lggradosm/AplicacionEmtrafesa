@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aplicacionemtrafesa;
+package aplicacionemtrafesa.capa1_presentacion;
 
-import aplicacionemtrafesa.capa1_presentacion.FormPrincipal;
+import aplicacionemtrafesa.capa1_presentacion.FormMenu;
 
 /**
  *
@@ -17,7 +17,7 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new FormPrincipal().setVisible(true);
+        new FormMenu().setVisible(true);
 
     }
     

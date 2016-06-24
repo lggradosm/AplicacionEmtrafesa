@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aplicacionemtrafesa.capa3_Dominio.Entidad;
+package aplicacionemtrafesa.capa3_Dominio.Entidades;
 
 /**
  *
@@ -64,5 +64,7 @@ public class Ruta {
         this.estado = estado;
     }
     
-    
+    public void obtenerPrecio(){
+        new ObtenerPrecio();
+    }
 }

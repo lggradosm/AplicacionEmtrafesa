@@ -13,7 +13,7 @@ import javax.swing.JInternalFrame;
  *
  * @author Home
  */
-public class FormPrincipal extends javax.swing.JFrame {
+public class FormMenu extends javax.swing.JFrame {
 
     public void agregarFrame(JInternalFrame internalFrame){
       
@@ -24,7 +24,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         Dimension screenSize = toolkit.getScreenSize();
         return screenSize;
     }
-    public FormPrincipal() {
+    public FormMenu() {
         initComponents();
       
         //desktop.setBounds(, obtenerResolucion().width-175, obtenerResolucion().height-45);
@@ -45,6 +45,12 @@ public class FormPrincipal extends javax.swing.JFrame {
         menuBar1 = new java.awt.MenuBar();
         menu1 = new java.awt.Menu();
         menu2 = new java.awt.Menu();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        botGestionarPasajes = new javax.swing.JMenuItem();
+        botGestionarRuta = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        botVenderPasaje = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -57,8 +63,56 @@ public class FormPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jMenu2.setText("Administracion");
+
+        botGestionarPasajes.setText("Gestionar Pasajes");
+        botGestionarPasajes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botGestionarPasajesActionPerformed(evt);
+            }
+        });
+        jMenu2.add(botGestionarPasajes);
+
+        botGestionarRuta.setText("Gestionar Ruta");
+        botGestionarRuta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botGestionarRutaActionPerformed(evt);
+            }
+        });
+        jMenu2.add(botGestionarRuta);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Procesos");
+
+        botVenderPasaje.setText("Vender Pasaje");
+        botVenderPasaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botVenderPasajeActionPerformed(evt);
+            }
+        });
+        jMenu3.add(botVenderPasaje);
+
+        jMenuBar1.add(jMenu3);
+
+        setJMenuBar(jMenuBar1);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botGestionarPasajesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botGestionarPasajesActionPerformed
+        this.dispose();
+        new FormGestionarPasaje().setVisible(true);
+    }//GEN-LAST:event_botGestionarPasajesActionPerformed
+
+    private void botVenderPasajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botVenderPasajeActionPerformed
+        
+    }//GEN-LAST:event_botVenderPasajeActionPerformed
+
+    private void botGestionarRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botGestionarRutaActionPerformed
+        this.dispose();
+        new FormGestionarRuta(this,true);
+    }//GEN-LAST:event_botGestionarRutaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,26 +131,33 @@ public class FormPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormPrincipal().setVisible(true);
+                new FormMenu().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem botGestionarPasajes;
+    private javax.swing.JMenuItem botGestionarRuta;
+    private javax.swing.JMenuItem botVenderPasaje;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;

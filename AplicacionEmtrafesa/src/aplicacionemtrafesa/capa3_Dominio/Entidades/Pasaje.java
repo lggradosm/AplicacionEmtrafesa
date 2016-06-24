@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aplicacionemtrafesa.capa3_Dominio.Entidad;
+package aplicacionemtrafesa.capa3_Dominio.Entidades;
 
 import java.awt.List;
 import java.util.Date;
