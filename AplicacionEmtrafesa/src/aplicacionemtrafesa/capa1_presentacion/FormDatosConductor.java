@@ -18,7 +18,7 @@ public class FormDatosConductor extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
          setLocationRelativeTo(this);
-        setSize(740,450);
+        setSize(740,470);
     }
 
     /**
@@ -123,11 +123,11 @@ public class FormDatosConductor extends javax.swing.JDialog {
         jLabel2.setText("Apellidos");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 290, -1));
-        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, -1, 20));
+        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, -1, 30));
 
         jLabel3.setText("Fecha de Nacimiento");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
-        getContentPane().add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, -1, -1));
+        getContentPane().add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, -1, 30));
 
         jLabel4.setText("Fecha de Contrato");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, -1, -1));
