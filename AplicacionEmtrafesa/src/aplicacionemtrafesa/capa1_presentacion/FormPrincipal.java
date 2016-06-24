@@ -47,9 +47,6 @@ public class FormPrincipal extends javax.swing.JFrame {
         menuBar1 = new java.awt.MenuBar();
         menu1 = new java.awt.Menu();
         menu2 = new java.awt.Menu();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        desktop = new javax.swing.JDesktopPane();
 
         jMenu1.setText("jMenu1");
 
@@ -62,40 +59,8 @@ public class FormPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Clientes");
-        jLabel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 180, 30));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 200, 380));
-
-        javax.swing.GroupLayout desktopLayout = new javax.swing.GroupLayout(desktop);
-        desktop.setLayout(desktopLayout);
-        desktopLayout.setHorizontalGroup(
-            desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1130, Short.MAX_VALUE)
-        );
-        desktopLayout.setVerticalGroup(
-            desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(desktop, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 1130, 680));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-      
-    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -133,10 +98,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane desktop;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
